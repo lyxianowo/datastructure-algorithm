@@ -11,7 +11,7 @@ public class MyArrayList {
     private int[] arr;
     private int capacity = 10; // 容量
     private int size = 0; // 当前数组的长度
-    private final int EXTENDRATIO = 2; // 扩容倍数
+    private final int EXTENDRATIO = 2; // 扩容因子
 
     public MyArrayList() {
         arr = new int[capacity];
@@ -69,7 +69,7 @@ public class MyArrayList {
 
     /* 确保容量足够 */
     private void ensureCapacity() {
-        if (size == capacity()) extendCapacity();
+        if (size >= capacity()) extendCapacity();
     }
     /* 数组扩容 */
     private void extendCapacity() {
